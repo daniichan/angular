@@ -1,1 +1,15 @@
-<app-photo-row [photos]="photos"></app-photo-row>
+<div class="text-center my-3">
+    <form>
+        <input
+            class="rounded border px-2 py-1"
+            type="search"
+            placeholder="Search..."
+            autofocus
+            (keyup)="debounce.next($event.target.value)"
+        >
+    </form>
+</div>
+
+<app-photo-row [photos]="photos | filterByDescription: filter"></app-photo-row>
+
+<app-load-button (click)="load()" [hasMore]="hasMore"></app-load-button>
