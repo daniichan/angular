@@ -4,7 +4,8 @@
 
         <div *ngIf="(user$ | async) as user; else login">
             <i class="fa fa-user-circle"></i>
-            <a class="ml-2 text-capitalize">{{ user.name }}</a>
+            <a class="mx-2 text-capitalize">{{ user.name }}</a>
+            <a (click)="logout()">(Logout)</a>
         </div>
         
         <ng-template #login>
