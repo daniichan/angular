@@ -1,7 +1,7 @@
 <div class="container">
     <h4 class="text-center">Login</h4>
 
-    <form [formGroup]="loginForm" class="form mt-4">
+    <form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
     
         <div class="form-group">
             <input 
@@ -10,11 +10,10 @@
                 placeholder="username" 
                 autofocus
             >
-            <small
-                *ngIf="loginForm.get('userName').errors?.required" 
-                class="text-danger d-block mt-2">
-                User name is required.
-            </small>
+            <app-vmessage 
+                *ngIf="loginForm.get('username').errors?.required"
+                text="Username is required.">
+            </app-vmessage>
         </div>
     
         <div class="form-group">
@@ -24,11 +23,10 @@
                 class="form-control" 
                 placeholder="password"
             >
-            <small
-                *ngIf="loginForm.get('password').errors?.required" 
-                class="text-danger d-block mt-2">
-                Password is required.
-            </small>            
+            <app-vmessage 
+                *ngIf="loginForm.get('password').errors?.required"
+                text="Password is required.">
+            </app-vmessage>
         </div>
         
 
