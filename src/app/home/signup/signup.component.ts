@@ -57,7 +57,7 @@ export class SignUpComponent implements OnInit {
                 ]
             ]
         });
-        this.platformDetectorService.isPlatformBrowser() && this.emailInput.nativeElement.focus();
+        // this.platformDetectorService.isPlatformBrowser() && this.emailInput.nativeElement.focus();
     }
 
     signup() {
