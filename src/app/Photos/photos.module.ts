@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { PhotoListModule } from './photo-list/photo-list.module';
 import { PhotoFormModule } from './photo-form/photo-form.module';
@@ -9,6 +10,7 @@ import { PhotoModule } from './photo/photo.module';
         PhotoModule,
         PhotoFormModule,
         PhotoListModule,
+        RouterModule
     ]
 })
 export class PhotosModule { }
