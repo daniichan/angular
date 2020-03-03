@@ -7,19 +7,23 @@
             <em>
                 {{ comment.date | date:'dd-MM-yyyy HH:mm' }}
             </em>
-            <p class="mb-2" [style.wordBreak]="'break-word'">
+            <p class="mb-2 break-word">
                 {{ comment.text }}
             </p>
         </li>
     </ul>
     <div class="mt-4">
-        <form>
+        <form [formGroup]="commentForm">
             <div class="input-group">
-                <textarea class="form-control"></textarea>
+                <textarea formControlName="comment" class="form-control"></textarea>
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-primary pull-left">Publish</button>
+                    <button  [disabled]="commentForm.invalid" type="submit" class="btn btn-primary pull-left">Publish</button>
                 </div>
             </div>
+            <app-vmessage 
+                text="Maximun size allowed is 300" 
+                *ngIf="commentForm.get('comment').errors?.maxlength">
+            </app-vmessage>
         </form>
     </div>
 </div>

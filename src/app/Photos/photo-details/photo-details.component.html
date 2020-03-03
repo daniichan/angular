@@ -4,7 +4,13 @@
             <app-photo [url]="photo.url" [description]="photo.description"></app-photo>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-4 p-4">
+            <small>
+                <p class="text-left break-word">
+                    {{ photo.description }}
+                </p>
+                <hr>
+            </small>
             <app-photo-comments [photoId]="photoId"></app-photo-comments>
         </div>
     </div>
