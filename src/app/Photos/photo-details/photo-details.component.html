@@ -9,7 +9,7 @@
                 <p class="text-left break-word">{{ photo.description }}</p>
                 <ul class="text-left mb-4 list-unstyled">
                     <li showIfLogged class="d-inline">
-                        <i class="fa fa-heart-o fa-2x mr-2 pull-left"></i>{{ photo.likes }} 
+                        <i (click)="like(photo)" class="fa fa-heart-o fa-2x mr-2 pull-left"></i>{{ photo.likes }} 
                     </li>
                     <li class="d-inline">
                         <i class="fa fa-comment-o fa-2x mx-2"></i>{{ photo.comments }}
