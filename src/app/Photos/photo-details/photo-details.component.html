@@ -7,10 +7,17 @@
         <div class="col-lg-4 p-4">
             <small>
                 <p class="text-left break-word">{{ photo.description }}</p>
-                <div class="text-left mb-4">
-                    <i class="fa fa-comment-o fa-2x mx-2"></i>{{ photo.comments }}
-                    <i photoOwnerOnly [ownedPhoto]="photo" (click)="remove()" class="fa fa-trash-o fa-2x float-right"></i>
-                </div>
+                <ul class="text-left mb-4 list-unstyled">
+                    <li showIfLogged class="d-inline">
+                        <i class="fa fa-heart-o fa-2x mr-2 pull-left"></i>{{ photo.likes }} 
+                    </li>
+                    <li class="d-inline">
+                        <i class="fa fa-comment-o fa-2x mx-2"></i>{{ photo.comments }}
+                    </li>
+                    <li photoOwnerOnly [ownedPhoto]="photo" class="d-inline">
+                        <i (click)="remove()" class="fa fa-trash-o fa-2x float-right"></i>
+                    </li>
+                </ul>
                 <hr>
             </small>
             
