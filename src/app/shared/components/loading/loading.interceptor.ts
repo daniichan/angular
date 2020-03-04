@@ -17,7 +17,7 @@ export class LoadingInterceptor implements HttpInterceptor{
                 if(event instanceof HttpResponse) {
                     this.loadingService.stop();
                 } else {
-                    this.loadingService.stop();
+                    this.loadingService.start();
                 }
             }));
     }
